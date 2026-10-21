@@ -36,7 +36,8 @@ These projects showcase the ability to handle both **cross-sectional** (applicat
 ![Lifetime PD](lifetime_pd.png)
 *Figure 2: Lifetime PD Curve. The marginal default rates (blue bars) spike exactly between months 25–40, corresponding to the 2008 Global Financial Crisis.*
 
----
+![Business Cost Curve](business_cost_curve.png)
+*Figure 3: Threshold Optimization (Elbow Method). By assigning a R50,000 cost to False Positives and a R200,000 cost to False Negatives, the model identifies the mathematically optimal risk threshold to minimize total portfolio loss.*
 
 ## 🚀 Interactive Streamlit Dashboard
 I built an interactive web app that allows risk managers to simulate macroeconomic shocks and watch the IFRS 9 Staging and Expected Credit Loss dynamically recalculate in real-time.
