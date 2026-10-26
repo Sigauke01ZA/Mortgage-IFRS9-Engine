@@ -24,38 +24,33 @@ This project was developed to strict **SR 11-7 / PRA SS1/23 standards**. The mod
 📄 **[Click here to read the full Model Validation Report](mortgage_validation_v1.md)**
 
 ## Interactive Dashboard
-The Streamlit app allows users to input an applicant's profile and dynamically adjust macroeconomic scenarios to watch the IFRS 9 Stage and Expected Credit Loss (ECL) update in real-time. 
+The Streamlit app allows users to dynamically adjust macroeconomic scenarios (Normal vs. Crisis) and watch the IFRS 9 Stage and Expected Credit Loss (ECL) update in real-time.
 
-*(Note: Update the image name below to match your exact screenshot filename)*
-<img src="streamlit_dashboard.png" width="100%">
+**Normal Scenario:**
+<img src="streamlit_normal.png" width="100%">
+
+**Crisis Scenario:**
+<img src="streamlit_crisis.png" width="100%">
 
 ## Key Analytical Steps
 
-### 1. Exploratory Data Analysis
-We analyzed the distribution of key risk drivers (FICO, LTV, DTI) across the Good and Bad populations. The boxplots clearly show the separation between performing and defaulted loans.
+### 1. Model Discrimination (ROC Curve)
+The model was validated for its ability to separate good borrowers from bad borrowers. 
 
-<img src="1_boxplots_financial_variables.png" width="100%">
-*Figure 1: Distribution of key financial variables by default status.*
+<img src="roc_curve.png" width="100%">
+*Figure 1: ROC Curve demonstrating model discrimination.*
 
 ### 2. Empirical Lifetime PD Curves
 To prove the model captures macro-sensitivity, we plotted the empirical Lifetime PD curves. The 2008 vintage shows a steep, multi-year rise in cumulative defaults, perfectly capturing the GFC economic shock.
 
-<img src="2_lifetime_pd_curves.png" width="100%">
+<img src="lifetime_pd.png" width="100%">
 *Figure 2: Empirical Lifetime PD Curves.*
 
 ### 3. Business Cost Matrix (Elbow Method)
-A model is useless without a business strategy. We did not use a purely statistical cutoff. Instead, we applied a Business Cost Matrix (False Positive vs. False Negative cost) and used the Elbow Method across 59 candidate thresholds to find the business-optimal cutoff.
+A model is useless without a business strategy. We did not use a purely statistical cutoff. Instead, we applied a Business Cost Matrix (False Positive vs. False Negative cost) and used the Elbow Method to find the business-optimal cutoff.
 
-*(Note: Update the image name below to match your exact cost matrix filename)*
-<img src="cost_matrix_elbow.png" width="100%">
-*Figure 3: The Elbow Method for Business Cost Optimization.*
-
-### 4. IFRS 9 Stress Testing Engine
-The engine applies a Dynamic Loss Given Default (LGD) and calculates the ECL. The chart below shows how the engine provisions capital across the GFC period.
-
-*(Note: Update the image name below to match your exact ECL chart filename)*
-<img src="ifrs9_ecl_provision_trend.png" width="100%">
-*Figure 4: IFRS 9 ECL Provision trend across the GFC.*
+<img src="business_cost_curve.png" width="100%">
+*Figure 3: The Business Cost Curve (Elbow Method) for threshold optimization.*
 
 ## Technical Architecture
 1. **Data ETL:** Processed 50,000 loans over a 60-month panel.
