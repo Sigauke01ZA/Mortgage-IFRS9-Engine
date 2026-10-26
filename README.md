@@ -24,13 +24,15 @@ This project was developed to strict **SR 11-7 / PRA SS1/23 standards**. The mod
 📄 **[Click here to read the full Model Validation Report](mortgage_validation_v1.md)**
 
 ## Interactive Dashboard
-The Streamlit app allows users to dynamically adjust macroeconomic scenarios (Normal vs. Crisis) and watch the IFRS 9 Stage and Expected Credit Loss (ECL) update in real-time.
+The Streamlit app allows users to dynamically adjust macroeconomic scenarios (Normal vs. Crisis) to calculate PD and LGD in real-time. 
 
-**Normal Scenario:**
-<img src="streamlit_normal.png" width="100%">
+| Normal Macro Scenario (PD) | Crisis Macro Scenario (PD) |
+| :---: | :---: |
+| <img src="streamlit_mortgage_normal_pd.png" width="100%"> | <img src="streamlit_mortgage_crisis_pd.png" width="100%"> |
 
-**Crisis Scenario:**
-<img src="streamlit_crisis.png" width="100%">
+| Normal Macro Scenario (LGD) | Crisis Macro Scenario (LGD) |
+| :---: | :---: |
+| <img src="streamlit_mortgage_normal_lgd.png" width="100%"> | <img src="streamlit_mortgage_crisis_lgd.png" width="100%"> |
 
 ## Key Analytical Steps
 
@@ -59,5 +61,5 @@ A model is useless without a business strategy. We did not use a purely statisti
 4. **IFRS 9 Engine:** Implemented 3-stage logic with a Business Cost Matrix.
 
 ---
-**Author:** Raymond Sibanda | [LinkedIn](https://www.linkedin.com/in/raymond-sibanda-91850613b) |
-FRM | BSc Mathematics | BCom Honors Accounting
+**Author:** Raymond Sibanda | [LinkedIn](https://www.linkedin.com/in/raymond-sibanda-91850613b)
+FRM | BSc Mathematics | BCom Honours Accounting
